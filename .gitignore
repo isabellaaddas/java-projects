@@ -1,0 +1,14 @@
+# Compiled class files
+*.class
+
+# Any package files
+*.jar
+*.war
+*.ear
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# Windows
+Thumbs.db
