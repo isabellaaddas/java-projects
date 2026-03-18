@@ -10,8 +10,12 @@ public class TTTGameLogic {
     // Variables for a board (3x3), two players (x and o),
     // and whether the game is finished (cannot make more
     // moves
-    String[][] board = new String[3][3];
-    String player_x = "x";
-    String player_o = "o";
-    boolean isFinished = false;
+    char[][] board;
+    char player_x;
+    char player_o;
+    boolean isFinished;
+
+    public TTTGameLogic() {
+        board = new char[3][3];
+    }
 }
