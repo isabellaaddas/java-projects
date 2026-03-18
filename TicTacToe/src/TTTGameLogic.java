@@ -13,9 +13,23 @@ public class TTTGameLogic {
     char[][] board;
     char player_x;
     char player_o;
-    boolean isFinished;
+    boolean is_finished;
 
     public TTTGameLogic() {
         board = new char[3][3];
+        player_x = 'x';
+        player_o = 'o';
+        is_finished = false;
+    }
+
+    /*
+     * Functions for game logic: making moves, checking
+     * for a win, printing the board, and calculating
+     * the board spaces
+     */
+
+    // Print the board in its current state
+    public void print_board() {
+
     }
 }
