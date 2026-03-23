@@ -7,5 +7,8 @@
 public class TTTGameLogicTester {
     public static void main(String[] args) {
         TTTGameLogic game = new TTTGameLogic();
+
+        // Print the board before starting a game
+        game.print_board();
     }
 }
