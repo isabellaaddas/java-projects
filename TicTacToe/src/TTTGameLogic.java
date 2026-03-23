@@ -9,7 +9,7 @@
 public class TTTGameLogic {
     // Variables for a board (3x3), two players (x and o),
     // and whether the game is finished (cannot make more
-    // moves
+    // moves)
     char[][] board;
     char player_x;
     char player_o;
@@ -36,6 +36,16 @@ public class TTTGameLogic {
         System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
         System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
         System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
+    }
+
+    // Check for a win by examining the limited win cases
+    public char find_winner() {
+        // There are limited win cases for a game of
+        // tic-tac-toe: three across in a row, column,
+        // or diagonal. Check that the values in these
+        // spaces are the same value and return that
+        // value
+        return ' ';
     }
 
     /*
