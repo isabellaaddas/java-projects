@@ -17,6 +17,7 @@ public class TTTGameLogic {
 
     public TTTGameLogic() {
         board = new char[3][3];
+        initialize_board();
         player_x = 'x';
         player_o = 'o';
         is_finished = false;
@@ -35,5 +36,20 @@ public class TTTGameLogic {
         System.out.println(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
         System.out.println(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
         System.out.println(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
+    }
+
+    /*
+     * Private helper methods called within public
+     * methods.
+     */
+
+    // Initialize the board upon construction
+    // a single space character
+    private void initialize_board() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = ' ';
+            }
+        }
     }
 }
