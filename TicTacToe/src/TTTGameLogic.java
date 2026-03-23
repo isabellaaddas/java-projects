@@ -30,11 +30,10 @@ public class TTTGameLogic {
 
     // Print the board in its current state
     public void print_board() {
-        // Nested for loop to iterate over rows and columns
-        for (int i = 0; i < 3; i++) {
-            for(int j = 0; i < 3; i++) {
-                System.out.printf("%c", board[i][j]);
-            }
-        }
+        // Since the board is a fixed size, only 3 print
+        // statements are needed
+        System.out.print(board[0][0] + " | " + board[0][1] + " | " + board[0][2]);
+        System.out.print(board[1][0] + " | " + board[1][1] + " | " + board[1][2]);
+        System.out.print(board[2][0] + " | " + board[2][1] + " | " + board[2][2]);
     }
 }
