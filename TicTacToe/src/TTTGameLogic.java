@@ -40,11 +40,6 @@ public class TTTGameLogic {
 
     // Check for a win by examining the limited win cases
     public char find_winner() {
-        // There are limited win cases for a game of
-        // tic-tac-toe: three across in a row, column,
-        // or diagonal. Check that the values in these
-        // spaces are the same value and return that
-        // value
         return ' ';
     }
 
@@ -61,5 +56,21 @@ public class TTTGameLogic {
                 board[i][j] = ' ';
             }
         }
+    }
+
+    // Find if the row has a winner
+    // Parameter: two index values, pointing towards
+    // the first cell in a row
+    private char winning_row(int i, int j) {
+        // For the first cell in a row, knowing that
+        // the board is 3x3, check the next 2 cells to
+        // the right for a match
+        if ((board[i][j] == player_x) && (board[i][j] == board[i][j + 1]) && (board[i][j + 1] == board[i][j + 2])) {
+            return player_x;
+        } else if ((board[i][j] == player_o) && (board[i][j] == board[i][j + 1]) && (board[i][j + 1] == board[i][j + 2])) {
+            return player_o;
+        }
+
+        return ' ';
     }
 }
