@@ -40,6 +40,34 @@ public class TTTGameLogic {
 
     // Check for a win by examining the limited win cases
     public char find_winner() {
+        // For all checked cases, if a winner is found, switch
+        // the is_finished flag to "true" to avoid making moves
+
+        // First iterate through the rows and columns of the
+        // board, returning the first instance of a win when
+        // one is found
+        for (int i = 0; i < 3; i++) {
+            char result = winning_row(i, 0);
+            if (result != ' ') {
+                is_finished = true;
+                return result;
+            }
+        }
+
+        for (int j = 0; j < 3; j++) {
+            char result = winning_column(0, j);
+            if (result != ' ') {
+                is_finished = true;
+                return result;
+            }
+        }
+
+        // Then check for the special diagonal cases where
+        // a win might be possible
+        if ((board[0][0] == player_x) && (board[1][1]) == (board[2][2])) {
+            is_finished = true;
+            return player_x;
+        }
         return ' ';
     }
 
@@ -65,9 +93,11 @@ public class TTTGameLogic {
         // For the first cell in a row, knowing that
         // the board is 3x3, check the next 2 cells to
         // the right for a match
-        if ((board[i][j] == player_x) && (board[i][j] == board[i][j + 1]) && (board[i][j + 1] == board[i][j + 2])) {
+        if ((board[i][j] == player_x) && (board[i][j] == board[i][j + 1])
+                && (board[i][j + 1] == board[i][j + 2])) {
             return player_x;
-        } else if ((board[i][j] == player_o) && (board[i][j] == board[i][j + 1]) && (board[i][j + 1] == board[i][j + 2])) {
+        } else if ((board[i][j] == player_o) && (board[i][j] == board[i][j + 1])
+                && (board[i][j + 1] == board[i][j + 2])) {
             return player_o;
         }
 
@@ -81,9 +111,11 @@ public class TTTGameLogic {
         // For the first cell in a column, knowing that
         // the board is 3x3, check the next 2 cells to
         // below for a match
-        if ((board[i][j] == player_x) && (board[i][j] == board[i + 1][j]) && (board[i + 1][j] == board[i + 2][j])) {
+        if ((board[i][j] == player_x) && (board[i][j] == board[i + 1][j])
+                && (board[i + 1][j] == board[i + 2][j])) {
             return player_x;
-        } else if ((board[i][j] == player_o) && (board[i][j] == board[i + 1][j]) && (board[i + 1][j] == board[i + 2][j])) {
+        } else if ((board[i][j] == player_o) && (board[i][j] == board[i + 1][j])
+                && (board[i + 1][j] == board[i + 2][j])) {
             return player_o;
         }
 
