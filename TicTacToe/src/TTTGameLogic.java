@@ -73,4 +73,20 @@ public class TTTGameLogic {
 
         return ' ';
     }
+
+    // Find if the column has a winner
+    // Parameter: two index values, pointing towards
+    // the first cell in a column
+    private char winning_column(int i, int j) {
+        // For the first cell in a column, knowing that
+        // the board is 3x3, check the next 2 cells to
+        // below for a match
+        if ((board[i][j] == player_x) && (board[i][j] == board[i + 1][j]) && (board[i + 1][j] == board[i + 2][j])) {
+            return player_x;
+        } else if ((board[i][j] == player_o) && (board[i][j] == board[i + 1][j]) && (board[i + 1][j] == board[i + 2][j])) {
+            return player_o;
+        }
+
+        return ' ';
+    }
 }
