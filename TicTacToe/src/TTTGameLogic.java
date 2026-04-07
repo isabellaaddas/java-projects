@@ -89,6 +89,10 @@ public class TTTGameLogic {
 
     // Make a move as either player_x or player_o and
     // print the board again
+    // Parameter:
+    // char variable representing the player making the move,
+    // two integer values x and y representing the coordinate
+    // of the target cell
     public void make_move(char player, int x, int y) {
         // First, ensure that the game is not finished
         // (you can't make moves when it's over)
@@ -98,7 +102,15 @@ public class TTTGameLogic {
             // player - either x or o
             if ((player == player_x) || (player == player_o)) {
 
-                // Now check to make sure
+                // Now check to make sure that the coordinates x and y
+                // are:
+                // a) valid for the 2d array board
+                // b) not occupied by the other player's pawn
+                if ((x >= 0 && x < 3) && (y >=0 && y < 3)) {
+                    if ((board[x][y] == player_x) || (board[x][y] == player_o)) {
+                        System.out.println("That space is already occupied!");
+                    }
+                }
             }
         }
     }
