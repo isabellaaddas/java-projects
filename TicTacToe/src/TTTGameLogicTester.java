@@ -10,5 +10,6 @@ public class TTTGameLogicTester {
 
         // Print the board before starting a game
         game.print_board();
+        System.out.printf("The winner is: %c!\n", game.find_winner());
     }
 }
