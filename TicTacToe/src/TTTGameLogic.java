@@ -87,6 +87,22 @@ public class TTTGameLogic {
         return ' ';
     }
 
+    // Make a move as either player_x or player_o and
+    // print the board again
+    public void make_move(char player, int x, int y) {
+        // First, ensure that the game is not finished
+        // (you can't make moves when it's over)
+        if (!is_finished) {
+
+            // Next, ensure that the char passed is a valid
+            // player - either x or o
+            if ((player == player_x) || (player == player_o)) {
+
+                // Now check to make sure
+            }
+        }
+    }
+
     /*
      * Private helper methods called within public
      * methods.
