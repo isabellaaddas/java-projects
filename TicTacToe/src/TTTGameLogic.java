@@ -64,10 +64,26 @@ public class TTTGameLogic {
 
         // Then check for the special diagonal cases where
         // a win might be possible
-        if ((board[0][0] == player_x) && (board[1][1]) == (board[2][2])) {
+        if ((board[0][0] == player_x) && (board[0][0]) == (board[1][1])
+                && (board[1][1]) == (board[2][2])) {
             is_finished = true;
             return player_x;
+        } else if ((board[0][0] == player_o) && (board[0][0]) == (board[1][1])
+                && (board[1][1]) == (board[2][2])) {
+            is_finished = true;
+            return player_o;
         }
+
+        if ((board[0][2] == player_x) && (board[0][2]) == (board[1][1])
+                && (board[1][1]) == (board[2][0])) {
+            is_finished = true;
+            return player_x;
+        } else if ((board[0][2] == player_o) && (board[0][2]) == (board[1][1])
+                && (board[1][1]) == (board[2][0])) {
+            is_finished = true;
+            return player_o;
+        }
+
         return ' ';
     }
 
