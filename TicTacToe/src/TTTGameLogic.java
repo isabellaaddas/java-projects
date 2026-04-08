@@ -117,7 +117,7 @@ public class TTTGameLogic {
                         // After an update, check for a win and
                         // print the appropriate message
                         if (find_winner() != ' ') {
-                            System.out.printf("The winner is player %c", find_winner());
+                            System.out.printf("The winner is player %c!\n", find_winner());
                         }
                     }
                 }
