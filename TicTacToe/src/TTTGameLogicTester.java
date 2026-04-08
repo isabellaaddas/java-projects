@@ -11,5 +11,9 @@ public class TTTGameLogicTester {
         // Print the board before starting a game
         game.print_board();
         System.out.printf("The winner is: %c!\n", game.find_winner());
+
+        System.out.println("Attempting a new move at [1][1]: ");
+        game.make_move('x', 1, 1);
+        game.print_board();
     }
 }
