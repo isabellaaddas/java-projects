@@ -109,6 +109,10 @@ public class TTTGameLogic {
                 if ((x >= 0 && x < 3) && (y >=0 && y < 3)) {
                     if ((board[x][y] == player_x) || (board[x][y] == player_o)) {
                         System.out.println("That space is already occupied!");
+                    } else {
+                        // If not occupied, that coordinate should
+                        // be updated to hold player pawn
+                        board[x][y] =  player;
                     }
                 }
             }
