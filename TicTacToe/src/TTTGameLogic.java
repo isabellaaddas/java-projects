@@ -113,6 +113,12 @@ public class TTTGameLogic {
                         // If not occupied, that coordinate should
                         // be updated to hold player pawn
                         board[x][y] =  player;
+
+                        // After an update, check for a win and
+                        // print the appropriate message
+                        if (find_winner() != ' ') {
+                            System.out.printf("The winner is player %c", find_winner());
+                        }
                     }
                 }
             }
