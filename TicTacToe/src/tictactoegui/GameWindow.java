@@ -24,8 +24,9 @@ public class GameWindow {
 
         // JPanel settings
         panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 3, 10, 10));
-        panel.setBackground(Color.ORANGE);
+        panel.setLayout(new GridLayout(3, 3, 5, 5));
+        panel.setBackground(Color.BLACK);
+        setGrid(panel);
 
         window.add(panel);
     }
@@ -34,5 +35,22 @@ public class GameWindow {
     // board
     public void showWindow() {
         window.setVisible(true);
+    }
+
+    /* Private methods */
+
+    // This method will take a given panel and
+    // populate it with panels for the grid matrix
+    // that will be the TTT game board
+    private void setGrid(JPanel p) {
+        // Create new Dimension object that will be the
+        // size of each cell
+        Dimension size = new Dimension(15, 15);
+        for (int i = 0; i < 9; i++) {
+            JPanel cell = new JPanel();
+            cell.setBackground(Color.ORANGE);
+            cell.setPreferredSize(size);
+            p.add(cell);
+        }
     }
 }
