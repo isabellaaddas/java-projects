@@ -13,11 +13,11 @@ public class TicTacToeBoard {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                {
-                    JFrame window = new JFrame();
-                    window.setTitle("Tic-Tac-Toe");
+                // Create instance GameWindow
+                GameWindow game = new GameWindow();
 
-                }
+                // Immediately show the window
+                game.showWindow();
             }
         });
     }
