@@ -16,8 +16,8 @@ public class GameWindow {
         window = new JFrame();
         window.setTitle("Tic-Tac-Toe");
         window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        window.setSize(500, 600);
-        window.setLocation(null);
+        window.setSize(500, 500);
+        window.setLocationRelativeTo(null);
     }
 
     // Running this method shows the window with the
