@@ -23,7 +23,7 @@ public class GameWindow {
 
         // JPanel settings
         JPanel panel = new JPanel();
-        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        panel.setLayout(new GridLayout(3, 3, 10, 10));
         panel.setBackground(Color.ORANGE);
 
         window.add(panel);
