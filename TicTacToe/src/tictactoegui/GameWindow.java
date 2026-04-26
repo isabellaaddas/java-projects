@@ -10,6 +10,7 @@ import java.awt.*;
  */
 public class GameWindow {
     private JFrame window;
+    private JPanel panel;
 
     // Create instance of the game window with some options
     // to handle default closing, size, etc.
@@ -22,7 +23,7 @@ public class GameWindow {
         window.setLocationRelativeTo(null);
 
         // JPanel settings
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new GridLayout(3, 3, 10, 10));
         panel.setBackground(Color.ORANGE);
 
