@@ -1,6 +1,7 @@
 package tictactoegui;
 
 import javax.swing.*;
+import java.net.URL;
 
 public abstract class TicTacToePlayer {
     private char player;
@@ -10,7 +11,7 @@ public abstract class TicTacToePlayer {
     // String value representing the player (x or
     // o) and the path to the icon to use for
     // that player, passed up from the subclass
-    TicTacToePlayer(char p, String path) {
+    TicTacToePlayer(char p, URL path) {
         player = p;
         playerIcon = new ImageIcon(path);
     }

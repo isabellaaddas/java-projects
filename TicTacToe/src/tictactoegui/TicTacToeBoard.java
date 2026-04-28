@@ -2,6 +2,7 @@ package tictactoegui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.net.URL;
 
 /*
  * Separate class will handle the board where everything
@@ -55,7 +56,8 @@ public class TicTacToeBoard {
             /* Test player classes and how they look
              * on the board
              */
-            PlayerX x = new PlayerX('x', "alpha-x.png");
+            URL img = TicTacToeBoard.class.getResource("alpha-x.png");
+            PlayerX x = new PlayerX('x', img);
             JLabel player = new JLabel(x.getPlayerIcon());
             cell.add(player);
             p.add(cell);
