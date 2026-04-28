@@ -1,4 +1,8 @@
 package tictactoegui;
 
-public class PlayerX {
+import javax.swing.*;
+
+public class PlayerX extends TicTacToePlayer {
+
+    // Implement
 }

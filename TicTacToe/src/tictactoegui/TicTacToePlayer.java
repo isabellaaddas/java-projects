@@ -6,6 +6,15 @@ public abstract class TicTacToePlayer {
     private char player;
     private ImageIcon playerIcon;
 
+    // Constructor will take a char value and a
+    // String value representing the player (x or
+    // o) and the path to the icon to use for
+    // that player, passed up from the subclass
+    TicTacToePlayer(char p, String path) {
+        player = p;
+        playerIcon = new ImageIcon(path);
+    }
+
     // This method will retrieve the icon object
     // representing the player's icon
     public ImageIcon getPlayerIcon() {
@@ -17,12 +26,4 @@ public abstract class TicTacToePlayer {
     public char getPlayer() {
         return player;
     }
-
-    // This method will set the icon based on which
-    // player (x or o) the object instance is
-    abstract void setPlayerIcon();
-
-    // This method will set the char variable for an
-    // instance of a player subclass
-    abstract void setPlayer();
 }
