@@ -51,6 +51,13 @@ public class TicTacToeBoard {
             JPanel cell = new JPanel();
             cell.setBackground(Color.ORANGE);
             cell.setPreferredSize(size);
+            cell.setLayout(new FlowLayout());
+            /* Test player classes and how they look
+             * on the board
+             */
+            PlayerX x = new PlayerX('x', "alpha-x.png");
+            JLabel player = new JLabel(x.getPlayerIcon());
+            cell.add(player);
             p.add(cell);
         }
     }
