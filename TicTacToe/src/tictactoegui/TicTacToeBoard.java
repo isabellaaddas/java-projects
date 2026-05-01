@@ -52,12 +52,11 @@ public class TicTacToeBoard {
             JPanel cell = new JPanel();
             cell.setBackground(Color.ORANGE);
             cell.setPreferredSize(size);
-            cell.setLayout(new FlowLayout());
+            cell.setLayout(new FlowLayout(FlowLayout.CENTER));
             /* Test player classes and how they look
              * on the board
              */
-            URL img = TicTacToeBoard.class.getResource("x-icon.pngs");
-            PlayerX x = new PlayerX('x', img);
+            PlayerX x = new PlayerX();
             JLabel player = new JLabel(x.getPlayerIcon());
             cell.add(player);
             p.add(cell);

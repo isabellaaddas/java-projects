@@ -9,4 +9,9 @@ public class PlayerX extends TicTacToePlayer {
     PlayerX(char p, URL path) {
         super(p, path);
     }
+
+    PlayerX() {
+        URL img = TicTacToeBoard.class.getResource("x-icon.png");
+        new PlayerX('x', img);
+    }
 }

@@ -7,6 +7,10 @@ public abstract class TicTacToePlayer {
     private char player;
     private ImageIcon playerIcon;
 
+    // Default constructor that will pass argument
+    // constructor in child class implementation
+    TicTacToePlayer() {}
+
     // Constructor will take a char value and a
     // String value representing the player (x or
     // o) and the path to the icon to use for
@@ -15,6 +19,8 @@ public abstract class TicTacToePlayer {
         player = p;
         playerIcon = new ImageIcon(path);
     }
+
+
 
     // This method will retrieve the icon object
     // representing the player's icon
