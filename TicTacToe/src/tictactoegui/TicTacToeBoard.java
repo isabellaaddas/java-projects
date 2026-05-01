@@ -55,11 +55,10 @@ public class TicTacToeBoard {
             cell.setLayout(new GridBagLayout());
             /* Test player classes and how they look
              * on the board
-             */
             URL img = getClass().getResource("x-icon.png");
             PlayerX x = new PlayerX('x', img);
             JLabel player = new JLabel(x.getPlayerIcon());
-            cell.add(player);
+            cell.add(player); */
             p.add(cell);
         }
     }
