@@ -56,7 +56,7 @@ public class TicTacToeBoard {
             /* Test player classes and how they look
              * on the board
              */
-            URL img = TicTacToeBoard.class.getResource("alpha-x.png");
+            URL img = TicTacToeBoard.class.getResource("x-icon.pngs");
             PlayerX x = new PlayerX('x', img);
             JLabel player = new JLabel(x.getPlayerIcon());
             cell.add(player);
