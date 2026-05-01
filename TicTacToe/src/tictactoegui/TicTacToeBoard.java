@@ -2,6 +2,8 @@ package tictactoegui;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.net.URL;
 
 /*
@@ -45,14 +47,8 @@ public class TicTacToeBoard {
     // populate it with panels for the grid matrix
     // that will be the TTT game board
     private void setGrid(JPanel p) {
-        // Create new Dimension object that will be the
-        // size of each cell
-        Dimension size = new Dimension(15, 15);
         for (int i = 0; i < 9; i++) {
             JPanel cell = new JPanel();
-            cell.setBackground(Color.ORANGE);
-            cell.setPreferredSize(size);
-            cell.setLayout(new GridBagLayout());
             /* Test player classes and how they look
              * on the board
             URL img = getClass().getResource("x-icon.png");
@@ -61,5 +57,41 @@ public class TicTacToeBoard {
             cell.add(player); */
             p.add(cell);
         }
+    }
+
+    // This method will take a JPanel representing
+    // a cell on the board game grid and set it up
+    // with specific format setting and a mouse
+    // event listener for adding a player icon to the
+    // cell (when cell is clicked)
+    private void setCell(JPanel cell) {
+        // Create new Dimension object that will be the
+        // size of each cell
+        Dimension size = new Dimension(15, 15);
+
+        cell.setBackground(Color.ORANGE);
+        cell.setPreferredSize(size);
+        cell.setLayout(new GridBagLayout());
+        cell.setLayout(new GridBagLayout());
+
+        cell.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            // No actions to be taken on these events
+            @Override
+            public void mousePressed(MouseEvent e) {}
+
+            @Override
+            public void mouseReleased(MouseEvent e) {}
+
+            @Override
+            public void mouseEntered(MouseEvent e) {}
+
+            @Override
+            public void mouseExited(MouseEvent e) {}
+        });
     }
 }
