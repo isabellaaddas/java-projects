@@ -77,7 +77,7 @@ public class TicTacToeBoard {
         cell.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-
+                URL img = getClass().getResource("x-icon.png");
             }
 
             // No actions to be taken on these events
