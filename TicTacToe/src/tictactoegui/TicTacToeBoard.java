@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /*
  * Separate class will handle the board where everything
