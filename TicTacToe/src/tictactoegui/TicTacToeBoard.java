@@ -16,13 +16,10 @@ import java.util.Map;
 public class TicTacToeBoard {
     private JFrame window;
     private JPanel panel;
-    // The Map object "board" will hold the coordinates
-    // for each cell as the key and the value is a
-    // Character object representing the player's move at
-    // that cell
-    // Note: the coordinates are calculated as 1-D array
-    // of spaces labeled 0-8
-    private Map<Integer, Character> board;
+    // The Map object "board" will hold the name of
+    // the cell as the key and a char representing
+    // the player's object being held in the label
+    private Map<String, Character> board;
 
     // Create instance of the game window with some options
     // to handle default closing, size, etc.
