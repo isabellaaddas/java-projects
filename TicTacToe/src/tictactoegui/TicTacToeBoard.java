@@ -54,6 +54,7 @@ public class TicTacToeBoard {
     private void setGrid(JPanel p) {
         for (int i = 0; i < 9; i++) {
             JPanel cell = new JPanel();
+            cell.setName("Cell" + String.valueOf(i));
             setCell(cell);
             /* Test player classes and how they look
              * on the board
@@ -83,20 +84,30 @@ public class TicTacToeBoard {
         cell.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // Copy the steps from the test to create
-                // a JLabel for the player (x by default
-                // for testing) that will find the correct
-                // image representation, create a player
-                // object, and use its image for the label
-                URL img = getClass().getResource("x-icon.png");
-                PlayerX x = new PlayerX('x', img);
-                JLabel move = new JLabel(x.getPlayerIcon());
-                cell.add(move);
+                // Only carry this function out if the board
+                // map doesn't contain the cell's name
+                // (if it does, there's already a player
+                // object there)
+                if (!board.containsKey(cell.getName())) {
+                    // Copy the steps from the test to create
+                    // a JLabel for the player (x by default
+                    // for testing) that will find the correct
+                    // image representation, create a player
+                    // object, and use its image for the label
+                    URL img = getClass().getResource("x-icon.png");
+                    PlayerX x = new PlayerX('x', img);
+                    JLabel move = new JLabel(x.getPlayerIcon());
+                    cell.add(move);
 
-                // Call revalidate and repaint on the cell
-                // after changes have been made
-                cell.revalidate();
-                cell.repaint();
+                    // Add this cell's name and player representation
+                    // to the board map
+                    board.put(cell.getName(), x.getPlayer());
+
+                    // Call revalidate and repaint on the cell
+                    // after changes have been made
+                    cell.revalidate();
+                    cell.repaint();
+                }
             }
 
             // No actions to be taken on these events
