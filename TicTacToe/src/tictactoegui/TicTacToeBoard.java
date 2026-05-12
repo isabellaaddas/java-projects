@@ -21,6 +21,7 @@ public class TicTacToeBoard {
     // the cell as the key and a char representing
     // the player's object being held in the label
     private Map<String, Character> board;
+    private boolean isFinished;
 
     // Create instance of the game window with some options
     // to handle default closing, size, etc.
@@ -40,6 +41,8 @@ public class TicTacToeBoard {
 
         // Instantiate the board
         board = new HashMap<>();
+
+        isFinished = false;
 
         window.add(panel);
     }
