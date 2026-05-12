@@ -54,6 +54,15 @@ public class TicTacToeBoard {
         window.setVisible(true);
     }
 
+    // This method will check if the grid has a
+    // winner at the time of being called; will
+    // utilize the map of the board and the cells
+    // on the board and return the char representing
+    // the winner
+    public char findWinner() {
+        return '\0';
+    }
+
     /* Private methods */
 
     // This method will take a given panel and
@@ -62,7 +71,7 @@ public class TicTacToeBoard {
     private void setGrid(JPanel p) {
         for (int i = 0; i < 9; i++) {
             JPanel cell = new JPanel();
-            cell.setName("Cell" + String.valueOf(i));
+            cell.setName(String.valueOf(i));
             setCell(cell);
             /* Test player classes and how they look
              * on the board
@@ -132,4 +141,12 @@ public class TicTacToeBoard {
             public void mouseExited(MouseEvent e) {}
         });
     }
+
+    // This method will make a move with a given cell
+    // and the player indicated as a char so their icon
+    // shows up on the board
+    private void makeMove(JPanel cell, char player) {}
+
+    private char winningRow() { return '\0'; }
+    private char winningColumn() { return '\0'; }
 }
