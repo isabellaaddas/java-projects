@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
 
 /*
@@ -36,6 +37,9 @@ public class TicTacToeBoard {
         panel.setLayout(new GridLayout(3, 3, 5, 5));
         panel.setBackground(Color.BLACK);
         setGrid(panel);
+
+        // Instantiate the board
+        board = new HashMap<>();
 
         window.add(panel);
     }
