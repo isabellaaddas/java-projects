@@ -101,7 +101,37 @@ public class TicTacToeBoard {
     // This method will make a move with a given cell
     // and the player indicated as a char so their icon
     // shows up on the board
-    public void makeMove(JPanel cell, char player) {}
+    public void makeMove(JPanel cell, char player) {
+        // Only carry this function out if the board
+        // map doesn't contain the cell's name
+        // (if it does, there's already a player
+        // object there)
+        if (!board.containsKey(cell.getName())) {
+            // Copy the steps from the test to create
+            // a JLabel for the player that will find the
+            // correct image representation, create a player
+            // object, and use its image for the label
+            URL img = getClass().getResource(player == 'x'? "x-icon.png" : "o-icon.png");
+            if (player == 'x') {
+                PlayerX x = new PlayerX('x', img);
+                JLabel move = new JLabel(x.getPlayerIcon());
+                cell.add(move);
+                // Add this cell's name and player representation
+                // to the board map
+                board.put(cell.getName(), x.getPlayer());
+            } else {
+                PlayerO o = new PlayerO('o', img);
+                JLabel move = new JLabel(o.getPlayerIcon());
+                cell.add(move);
+                board.put(cell.getName(), o.getPlayer());
+            }
+
+            // Call revalidate and repaint on the cell
+            // after changes have been made
+            cell.revalidate();
+            cell.repaint();
+        }
+    }
 
     private char winningRow() { return '\0'; }
     private char winningColumn() { return '\0'; }
