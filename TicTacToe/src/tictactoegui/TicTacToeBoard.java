@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 /*
  * Separate class will handle the board where everything
@@ -97,55 +96,12 @@ public class TicTacToeBoard {
         cell.setPreferredSize(size);
         cell.setLayout(new GridBagLayout());
         cell.setLayout(new GridBagLayout());
-
-        cell.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // Only carry this function out if the board
-                // map doesn't contain the cell's name
-                // (if it does, there's already a player
-                // object there)
-                if (!board.containsKey(cell.getName())) {
-                    // Copy the steps from the test to create
-                    // a JLabel for the player (x by default
-                    // for testing) that will find the correct
-                    // image representation, create a player
-                    // object, and use its image for the label
-                    URL img = getClass().getResource("x-icon.png");
-                    PlayerX x = new PlayerX('x', img);
-                    JLabel move = new JLabel(x.getPlayerIcon());
-                    cell.add(move);
-
-                    // Add this cell's name and player representation
-                    // to the board map
-                    board.put(cell.getName(), x.getPlayer());
-
-                    // Call revalidate and repaint on the cell
-                    // after changes have been made
-                    cell.revalidate();
-                    cell.repaint();
-                }
-            }
-
-            // No actions to be taken on these events
-            @Override
-            public void mousePressed(MouseEvent e) {}
-
-            @Override
-            public void mouseReleased(MouseEvent e) {}
-
-            @Override
-            public void mouseEntered(MouseEvent e) {}
-
-            @Override
-            public void mouseExited(MouseEvent e) {}
-        });
     }
 
     // This method will make a move with a given cell
     // and the player indicated as a char so their icon
     // shows up on the board
-    private void makeMove(JPanel cell, char player) {}
+    public void makeMove(JPanel cell, char player) {}
 
     private char winningRow() { return '\0'; }
     private char winningColumn() { return '\0'; }
