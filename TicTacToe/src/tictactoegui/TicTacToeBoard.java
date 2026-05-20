@@ -133,6 +133,29 @@ public class TicTacToeBoard {
         cell.setLayout(new GridBagLayout());
     }
 
-    private char winningRow() { return '\0'; }
+    // This method will take an int value where the
+    // row starts and check that the next 2 spaces
+    // are both matching the first cell and each other
+    // (calculated on indices 0-8 as a 1D array)
+    private char winningRow(int start) {
+        // First, check that the starting cell and next
+        // 2 cells are in the hash table (contain player
+        // moves)
+        if (board.containsKey(start + "") && board.containsKey((start + 1) + "")
+                && board.containsKey((start + 2) + "")) {
+            // Then check that the row contains all x's or
+            // all o's
+            if ((board.get(start + "") == 'x') && (board.get(start + "") == board.get((start + 1) + ""))
+                    && (board.get((start + 1) + "") == board.get((start + 2) + ""))) {
+                return 'x';
+            } else if ((board.get(start + "") == 'o') && (board.get(start + "") == board.get((start + 1) + ""))
+                    && (board.get((start + 1) + "") == board.get((start + 2) + ""))) {
+                return 'o';
+            }
+        }
+
+        // Otherwise, return space char
+        return ' ';
+    }
     private char winningColumn() { return '\0'; }
 }
