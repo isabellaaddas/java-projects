@@ -157,5 +157,19 @@ public class TicTacToeBoard {
         // Otherwise, return space char
         return ' ';
     }
-    private char winningColumn() { return '\0'; }
+
+    // This method will take an int value where the
+    // column starts and check the next 2 spaces down
+    // are both matching the first cell and each other
+    // (calculated on indices 0-8 as a 1D array)
+    private char winningColumn(int start) {
+        // First, check that the starting cell and next
+        // 2 cells are in the hash table (contain player
+        // moves)
+        if (board.containsKey(start + "") && board.containsKey((start + 3) + "")
+                && board.containsKey((start + 6) + "")) {
+
+        }
+        return '\0';
+    }
 }
