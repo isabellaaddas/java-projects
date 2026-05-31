@@ -171,7 +171,15 @@ public class TicTacToeBoard {
         // moves)
         if (board.containsKey(start + "") && board.containsKey((start + 3) + "")
                 && board.containsKey((start + 6) + "")) {
-
+            // Then check that the column contains all x's or
+            // o's
+            if ((board.get(start + "") == 'x') && (board.get(start + "") == board.get((start + 3) + ""))
+                    && (board.get((start + 3) + "") == board.get((start + 6) + ""))) {
+                return 'x';
+            } else if ((board.get(start + "") == 'o') && (board.get(start + "") == board.get((start + 3) + ""))
+                    && (board.get((start + 3) + "") == board.get((start + 6) + ""))) {
+                return 'o';
+            }
         }
         return '\0';
     }
