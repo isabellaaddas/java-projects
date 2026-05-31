@@ -27,7 +27,7 @@ public class TicTacToeGUI {
                 // finished to allow for two players to
                 // play a game, taking turns between x
                 // and o moves
-                while (!game.getState()) {
+                while (!game.isFinished()) {
 
                 }
             }
