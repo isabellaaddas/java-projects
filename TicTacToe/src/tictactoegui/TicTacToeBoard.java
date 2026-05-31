@@ -59,7 +59,38 @@ public class TicTacToeBoard {
     // on the board and return the char representing
     // the winner
     public char findWinner() {
-        return '\0';
+        // For all cases, if a winner is found, flip the
+        // isFinished state variable to true, preventing
+        // the game from continuing
+
+        // First check all rows and columns on the board
+        // and return the first instance of a win when one
+        // is found
+        for (int i = 0; i < 3; i++) {
+            char rowResult = winningRow(i);
+            char columnResult = winningColumn(i);
+            if (rowResult != ' ') {
+                isFinished = true;
+                return rowResult;
+            } else if (columnResult != ' ') {
+                isFinished = true;
+                return columnResult;
+            }
+        }
+
+        // Next, check for the diagonal case of wins
+        if (board.containsKey("0") && board.containsKey("4")
+                && board.containsKey("8")) {
+            if ((board.get("0") == 'x') && (board.get("0") == board.get("4"))
+                    && (board.get("4") == board.get("8"))) {
+                isFinished = true;
+                return 'x';
+            } else if ((board.get("0") == 'o') && (board.get("0") == board.get("4"))
+                    && (board.get("4") == board.get("8"))) {
+                isFinished = true;
+                return 'o';
+            }
+        }
     }
 
     // This method will make a move with a given cell
