@@ -181,6 +181,6 @@ public class TicTacToeBoard {
                 return 'o';
             }
         }
-        return '\0';
+        return ' ';
     }
 }
