@@ -79,6 +79,7 @@ public class TicTacToeBoard {
         }
 
         // Next, check for the diagonal case of wins
+        // (2 diagonals exist)
         if (board.containsKey("0") && board.containsKey("4")
                 && board.containsKey("8")) {
             if ((board.get("0") == 'x') && (board.get("0") == board.get("4"))
@@ -91,6 +92,22 @@ public class TicTacToeBoard {
                 return 'o';
             }
         }
+
+        if (board.containsKey("2") && board.containsKey("4")
+                && board.containsKey("6")) {
+            if ((board.get("2") == 'x') && (board.get("2") == board.get("4"))
+                    && (board.get("4") == board.get("6"))) {
+                isFinished = true;
+                return 'x';
+            } else if ((board.get("2") == 'o') && (board.get("2") == board.get("4"))
+                    && (board.get("4") == board.get("6"))) {
+                isFinished = true;
+                return 'o';
+            }
+        }
+
+        // When no winning cases are found, return space char
+        return ' ';
     }
 
     // This method will make a move with a given cell
