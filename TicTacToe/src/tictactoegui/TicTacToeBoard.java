@@ -148,6 +148,19 @@ public class TicTacToeBoard {
         }
     }
 
+    // This method will get the state of the board to
+    // determine how the game should proceed
+    public boolean getState() {
+        return isFinished;
+    }
+
+    // This method, which should only be called if the
+    // game is over, will display the winner on the screen
+    // with a congratulatory message
+    public void showWinner() {
+
+    }
+
     /* Private methods */
 
     // This method will take a given panel and
