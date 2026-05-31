@@ -18,6 +18,18 @@ public class TicTacToeGUI {
 
                 // Immediately show the window
                 game.showWindow();
+
+                // Set a boolean variable to handle which
+                // player turn is on
+                boolean xTurn = true;
+
+                // Run a while loop while the game isn't
+                // finished to allow for two players to
+                // play a game, taking turns between x
+                // and o moves
+                while (!game.getState()) {
+
+                }
             }
         });
     }

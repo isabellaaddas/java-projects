@@ -150,7 +150,7 @@ public class TicTacToeBoard {
 
     // This method will get the state of the board to
     // determine how the game should proceed
-    public boolean getState() {
+    public boolean isFinished() {
         return isFinished;
     }
 
