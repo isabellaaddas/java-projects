@@ -28,7 +28,10 @@ public class TicTacToeGUI {
                 // play a game, taking turns between x
                 // and o moves
                 while (!game.isFinished()) {
+                    // If x's turn, make move as x
+                    if (xTurn) {
 
+                    }
                 }
             }
         });
