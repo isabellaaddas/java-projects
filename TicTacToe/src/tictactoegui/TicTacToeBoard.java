@@ -154,6 +154,10 @@ public class TicTacToeBoard {
         return isFinished;
     }
 
+    // This method will return the main panel holding
+    // the board
+    public JPanel getPanel() { return panel; }
+
     // This method, which should only be called if the
     // game is over, will display the winner on the screen
     // with a congratulatory message

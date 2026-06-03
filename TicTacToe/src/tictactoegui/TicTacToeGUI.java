@@ -1,5 +1,8 @@
 package tictactoegui;
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
 
 /*
  * This class will be the board where everything happens for
@@ -23,16 +26,18 @@ public class TicTacToeGUI {
                 // player turn is on
                 boolean xTurn = true;
 
-                // Run a while loop while the game isn't
-                // finished to allow for two players to
-                // play a game, taking turns between x
-                // and o moves
-                while (!game.isFinished()) {
-                    // If x's turn, make move as x
-                    if (xTurn) {
-
+                // Add a mouse event listener for the entire
+                // board to invoke the makeMove() method,
+                // which will automatically handle the game
+                // state upon being finished
+                game.getPanel().addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        // Only make a move if the object that
+                        // was clicked is a panel object, aka
+                        // a cell on the board
                     }
-                }
+                });
             }
         });
     }
