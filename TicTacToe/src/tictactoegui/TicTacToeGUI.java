@@ -38,6 +38,7 @@ public class TicTacToeGUI {
                         // a cell on the board
                         if (e.getSource() instanceof JPanel) {
                             JPanel cellClicked = (JPanel) e.getSource();
+                            System.out.println("Cell: " + cellClicked.getName());
                             // If current turn is for player x,
                             // move will be registered with x char
                             if (xTurn[0]) {
