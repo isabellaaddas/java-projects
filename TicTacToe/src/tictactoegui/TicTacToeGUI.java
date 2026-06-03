@@ -13,7 +13,7 @@ public class TicTacToeGUI {
     public static void main(String[] args) {
         // Set a boolean variable to handle which
         // player turn is on
-        boolean xTurn = true;
+        final boolean[] xTurn = {true};
 
         // Use invoke later and create runnable method to
         // handle the single thread where everything runs
@@ -40,11 +40,12 @@ public class TicTacToeGUI {
                             JPanel cellClicked = (JPanel) e.getSource();
                             // If current turn is for player x,
                             // move will be registered with x char
-                            if (xTurn) {
+                            if (xTurn[0]) {
                                 game.makeMove(cellClicked, 'x');
-                                xTurn = !xTurn;
+                                xTurn[0] = !xTurn[0];
                             } else {
                                 game.makeMove(cellClicked, 'o');
+                                xTurn[0] = !xTurn[0];
                             }
                         }
                     }
