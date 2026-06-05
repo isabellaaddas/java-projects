@@ -149,6 +149,9 @@ public class TicTacToeBoard {
                 cell.revalidate();
                 cell.repaint();
             }
+
+            // After every move, check for a winner
+            char result = findWinner();
         }
     }
 
