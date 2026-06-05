@@ -50,6 +50,7 @@ public class TicTacToeBoard {
         // JPanel settings (text)
         textPanel = new JPanel();
         textPanel.setLayout(new FlowLayout());
+        textPanel.setPreferredSize(new Dimension(200, 80));
         textPanel.add(new JLabel("GAME START"));
 
         // Instantiate the board
