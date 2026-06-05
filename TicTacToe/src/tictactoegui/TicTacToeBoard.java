@@ -22,6 +22,9 @@ public class TicTacToeBoard {
     // the player's object being held in the label
     private Map<String, Character> board;
     private boolean isFinished;
+    private boolean xTurn;  // Use this as way of
+                            // managing player turns on the
+                            // board
 
     // Create instance of the game window with some options
     // to handle default closing, size, etc.
@@ -43,6 +46,7 @@ public class TicTacToeBoard {
         board = new HashMap<>();
 
         isFinished = false;
+        xTurn = true;
 
         window.add(panel);
     }
