@@ -37,11 +37,15 @@ public class TicTacToeBoard {
         window.setSize(500, 500);
         window.setLocationRelativeTo(null);
 
-        // JPanel settings
+        // JPanel settings (game board)
         gamePanel = new JPanel();
         gamePanel.setLayout(new GridLayout(3, 3, 5, 5));
         gamePanel.setBackground(Color.BLACK);
         setGrid(gamePanel);
+        // (text)
+        textPanel = new JPanel();
+        textPanel.setLayout(new FlowLayout());
+        textPanel.add(new JLabel("GAME START"));
 
         // Instantiate the board
         board = new HashMap<>();
@@ -50,6 +54,7 @@ public class TicTacToeBoard {
         xTurn = true;
 
         window.add(gamePanel);
+        window.add(textPanel);
     }
 
     // Running this method shows the window with the
