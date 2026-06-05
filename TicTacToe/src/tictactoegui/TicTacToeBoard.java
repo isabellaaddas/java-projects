@@ -16,7 +16,8 @@ import java.util.Map;
  */
 public class TicTacToeBoard {
     private JFrame window;
-    private JPanel panel;
+    private JPanel gamePanel;
+    private JPanel textPanel;
     // The Map object "board" will hold the name of
     // the cell as the key and a char representing
     // the player's object being held in the label
@@ -37,10 +38,10 @@ public class TicTacToeBoard {
         window.setLocationRelativeTo(null);
 
         // JPanel settings
-        panel = new JPanel();
-        panel.setLayout(new GridLayout(3, 3, 5, 5));
-        panel.setBackground(Color.BLACK);
-        setGrid(panel);
+        gamePanel = new JPanel();
+        gamePanel.setLayout(new GridLayout(3, 3, 5, 5));
+        gamePanel.setBackground(Color.BLACK);
+        setGrid(gamePanel);
 
         // Instantiate the board
         board = new HashMap<>();
@@ -48,7 +49,7 @@ public class TicTacToeBoard {
         isFinished = false;
         xTurn = true;
 
-        window.add(panel);
+        window.add(gamePanel);
     }
 
     // Running this method shows the window with the
@@ -160,10 +161,6 @@ public class TicTacToeBoard {
     public boolean isFinished() {
         return isFinished;
     }
-
-    // This method will return the main panel holding
-    // the board
-    public JPanel getPanel() { return panel; }
 
     // This method, which should only be called if the
     // game is over, will display the winner on the screen
