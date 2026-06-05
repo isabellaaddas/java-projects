@@ -203,6 +203,25 @@ public class TicTacToeBoard {
         cell.setPreferredSize(size);
         cell.setLayout(new GridBagLayout());
         cell.setLayout(new GridBagLayout());
+
+        cell.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Take source of mouse event (a cell) and
+                // instantiate it to be passed along to
+                // makeMove()
+                JPanel cellClicked = (JPanel) e.getSource();
+                // If current turn is for player x,
+                // move will be registered with x char
+                if (xTurn) {
+                    makeMove(cellClicked, 'x');
+                    xTurn = !xTurn;
+                } else {
+                    makeMove(cellClicked, 'o');
+                    xTurn = !xTurn;
+                }
+            }
+        });
     }
 
     // This method will take an int value where the
