@@ -19,6 +19,7 @@ public class TicTacToeBoard {
     private JPanel gamePanel;
     private JPanel textPanel;
     private JPanel mainPanel;
+    private JLabel gameText;
     // The Map object "board" will hold the name of
     // the cell as the key and a char representing
     // the player's object being held in the label
@@ -42,6 +43,9 @@ public class TicTacToeBoard {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
+        // Game text (JLabel) settings
+        gameText = new JLabel("GAME START");
+
         // JPanel settings (game board)
         gamePanel = new JPanel();
         gamePanel.setLayout(new GridLayout(3, 3, 5, 5));
@@ -52,7 +56,7 @@ public class TicTacToeBoard {
         textPanel = new JPanel();
         textPanel.setLayout(new FlowLayout());
         textPanel.setPreferredSize(new Dimension(500, 30));
-        textPanel.add(new JLabel("GAME START"));
+        textPanel.add(gameText);
 
         // Instantiate the board
         board = new HashMap<>();
