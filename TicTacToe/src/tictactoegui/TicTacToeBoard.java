@@ -288,4 +288,11 @@ public class TicTacToeBoard {
         }
         return ' ';
     }
+
+    // This method will take a String value and update
+    // the gameText variable to show the state of the
+    // game
+    private void updateGameText(String s) {
+        gameText.setText(s);
+    }
 }
