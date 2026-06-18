@@ -224,11 +224,11 @@ public class TicTacToeBoard {
                 // If current turn is for player x,
                 // move will be registered with x char
                 if (xTurn) {
-                    updateGameText("X TURN");
+                    updateGameText("O TURN");
                     makeMove(cellClicked, 'x');
                     xTurn = !xTurn;
                 } else {
-                    updateGameText("O TURN");
+                    updateGameText("X TURN");
                     makeMove(cellClicked, 'o');
                     xTurn = !xTurn;
                 }
