@@ -44,7 +44,7 @@ public class TicTacToeBoard {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.Y_AXIS));
 
         // Game text (JLabel) settings
-        gameText = new JLabel("GAME START");
+        gameText = new JLabel("GAME START! X TURN");
 
         // JPanel settings (game board)
         gamePanel = new JPanel();
