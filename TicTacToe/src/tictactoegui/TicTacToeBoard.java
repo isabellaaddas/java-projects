@@ -170,6 +170,12 @@ public class TicTacToeBoard {
 
             // After every move, check for a winner
             char result = findWinner();
+
+            // If result returns a winner, then display
+            // a winning message with gameText
+            if (result != ' ') {
+                updateGameText((result + "").toUpperCase() + " WINS!");
+            }
         }
     }
 
