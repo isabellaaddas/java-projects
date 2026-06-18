@@ -179,13 +179,6 @@ public class TicTacToeBoard {
         return isFinished;
     }
 
-    // This method, which should only be called if the
-    // game is over, will display the winner on the screen
-    // with a congratulatory message
-    public void showWinner() {
-
-    }
-
     /* Private methods */
 
     // This method will take a given panel and
